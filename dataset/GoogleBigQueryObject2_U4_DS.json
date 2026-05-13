@@ -1,0 +1,17 @@
+{
+	"name": "GoogleBigQueryObject2_U4_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "GoogleBigQuery2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "GoogleBigQueryV2Object",
+		"schema": [],
+		"typeProperties": {
+			"dataset": "inceptez_insurance",
+			"table": "claim_transactions"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

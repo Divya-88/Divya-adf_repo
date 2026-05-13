@@ -1,0 +1,15 @@
+{
+	"name": "datafactory-etl-wd36",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1e4693a3-307b-4f7a-afed-7ce353a35026",
+		"tenantId": "452f806a-a6d0-4e30-8c45-23e4145a9e84"
+	}
+}

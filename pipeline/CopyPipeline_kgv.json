@@ -1,0 +1,139 @@
+{
+	"name": "CopyPipeline_kgv",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_kgv",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "adlscontainer/adlsdir/data_d8ebbe74-182f-4374-ba63-2d9bce693932_3f7418c3-27b9-4ac5-9c81-327372a24916.json"
+					},
+					{
+						"name": "Destination",
+						"value": "adlscontainer/adlsdir/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['claim_id']"
+								},
+								"sink": {
+									"name": "claim_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['patient_id']"
+								},
+								"sink": {
+									"name": "patient_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['claim_amount']"
+								},
+								"sink": {
+									"name": "claim_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['insurance_provider']"
+								},
+								"sink": {
+									"name": "insurance_provider"
+								}
+							},
+							{
+								"source": {
+									"path": "$['claim_status']"
+								},
+								"sink": {
+									"name": "claim_status"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hospital_id']"
+								},
+								"sink": {
+									"name": "hospital_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['claim_date']"
+								},
+								"sink": {
+									"name": "claim_date"
+								}
+							},
+							{
+								"source": {
+									"path": "$['last_updated']"
+								},
+								"sink": {
+									"name": "last_updated"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_kgv",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_kgv",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-05-05T08:15:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

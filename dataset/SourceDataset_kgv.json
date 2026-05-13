@@ -1,0 +1,49 @@
+{
+	"name": "SourceDataset_kgv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "data_d8ebbe74-182f-4374-ba63-2d9bce693932_3f7418c3-27b9-4ac5-9c81-327372a24916.json",
+				"folderPath": "adlsdir",
+				"fileSystem": "adlscontainer"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"claim_id": {
+					"type": "string"
+				},
+				"patient_id": {
+					"type": "string"
+				},
+				"claim_amount": {
+					"type": "number"
+				},
+				"insurance_provider": {
+					"type": "string"
+				},
+				"claim_status": {
+					"type": "string"
+				},
+				"hospital_id": {
+					"type": "string"
+				},
+				"claim_date": {
+					"type": "string"
+				},
+				"last_updated": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

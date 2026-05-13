@@ -1,0 +1,20 @@
+{
+	"name": "DKJson8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DineshkAzureDataLakeStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "adlsdirectory",
+				"fileSystem": "adlscontainer"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,49 @@
+{
+	"name": "Json4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "`dim_tower_source`.json",
+				"folderPath": "adlsdir",
+				"fileSystem": "adlscontainer"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"tower_id": {
+					"type": "string"
+				},
+				"tower_name": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"region": {
+					"type": "string"
+				},
+				"network_type": {
+					"type": "string"
+				},
+				"installation_date": {
+					"type": "string"
+				},
+				"updated_at": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

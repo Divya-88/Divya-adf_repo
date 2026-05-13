@@ -1,0 +1,16 @@
+{
+	"name": "MySqlTable3_U2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MySql_U2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`cust_dim`"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,16 @@
+{
+	"name": "MySqlTable4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Vivek_MySQL_Source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`customer1`"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

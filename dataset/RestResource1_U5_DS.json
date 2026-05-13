@@ -1,0 +1,13 @@
+{
+	"name": "RestResource1_U5_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestService2_U5",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
