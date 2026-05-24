@@ -1,0 +1,15 @@
+{
+	"name": "wd36-azure-data-factory",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8c4773c7-9e3c-443a-98ee-5bb7934ec0a1",
+		"tenantId": "d282161d-31c8-4698-be9e-26f18fb7660f"
+	}
+}
