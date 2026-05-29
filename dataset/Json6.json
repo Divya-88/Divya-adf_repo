@@ -1,10 +1,6 @@
 {
 	"name": "Json6",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage3",
-			"type": "LinkedServiceReference"
-		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
