@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_yun",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_Sink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "landing-zone",
+				"fileSystem": "divyaadlscont"
+			}
+		},
+		"schema": {}
+	}
+}

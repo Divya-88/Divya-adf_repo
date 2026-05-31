@@ -1,0 +1,12 @@
+{
+	"name": "MySqlTable1_UC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MySQL_Source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": []
+	}
+}
