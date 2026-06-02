@@ -1,0 +1,23 @@
+{
+	"name": "adlsmulticsvazure",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_multifile_Az",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "multicsv",
+				"fileSystem": "divyaadlscont"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
