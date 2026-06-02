@@ -1,0 +1,27 @@
+{
+	"name": "alds_target_mergefile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureADLSTarget",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(\n    'source',\n    formatDateTime(\n        convertTimeZone(\n            pipeline().TriggerTime,\n            'UTC',\n            'India Standard Time'\n        ),\n        'yyyyMMdd_HHmmss'\n    ),\n    '.txt'\n)",
+					"type": "Expression"
+				},
+				"folderPath": "target-mergefile",
+				"fileSystem": "divyaadlscont"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
