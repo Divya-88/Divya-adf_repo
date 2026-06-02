@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "source3.txt",
 				"folderPath": "multicsv",
 				"fileSystem": "divyaadlscont"
 			},
