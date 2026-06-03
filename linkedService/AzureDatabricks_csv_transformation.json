@@ -1,0 +1,13 @@
+{
+	"name": "AzureDatabricks_csv_transformation",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-7405614990346665.5.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/f74f7547-5bb1-4005-87f6-f1ee05b9df1f/resourceGroups/RG_WD36/providers/Microsoft.Databricks/workspaces/adb-workspace-dev",
+			"existingClusterId": "0602-022004-8ezsq93v"
+		}
+	}
+}
