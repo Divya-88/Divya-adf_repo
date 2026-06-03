@@ -1,8 +1,8 @@
 {
-	"name": "alds_target_mergefile",
+	"name": "alds_filecheck_source",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureADLSTarget",
+			"referenceName": "ADLS_multifile_Az",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,10 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@concat(\n    'source',\n    formatDateTime(\n        convertTimeZone(\n            pipeline().TriggerTime,\n            'UTC',\n            'India Standard Time'\n        ),\n        'yyyyMMdd_HHmmss'\n    ),\n    '.csv'\n)",
-					"type": "Expression"
-				},
 				"folderPath": "target-mergefile",
 				"fileSystem": "divyaadlscont"
 			},
@@ -22,6 +18,23 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "name",
+				"type": "String"
+			},
+			{
+				"name": "amt",
+				"type": "String"
+			},
+			{
+				"name": "dop",
+				"type": "String"
+			}
+		]
 	}
 }
