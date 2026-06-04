@@ -162,7 +162,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"notebookPath": "/Users/divyakrish@workforlife8891gmail.onmicrosoft.com/Adls_Databricks_transforatiion"
+								"notebookPath": "/Users/divyakrish@workforlife8891gmail.onmicrosoft.com/Divya-Azure_databricks_repo/Adls_Databricks_transformation"
 							},
 							"linkedServiceName": {
 								"referenceName": "AzureDatabricks_csv_transformation",
