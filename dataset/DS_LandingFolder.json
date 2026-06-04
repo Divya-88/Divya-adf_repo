@@ -1,23 +1,18 @@
 {
-	"name": "adlsmulticsvazure",
+	"name": "DS_LandingFolder",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ADLS_multifile_Az",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": "landing",
 				"fileSystem": "divyaadlscont"
-			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
-		},
-		"schema": []
+			}
+		}
 	}
 }

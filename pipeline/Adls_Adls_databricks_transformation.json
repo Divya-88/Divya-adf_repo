@@ -21,7 +21,7 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "multicsv",
+							"wildcardFolderPath": "landing",
 							"wildcardFileName": "*.csv",
 							"enablePartitionDiscovery": false
 						},
@@ -60,7 +60,13 @@
 				"outputs": [
 					{
 						"referenceName": "alds_target_mergefile",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": {
+								"value": "@concat(\n    'source_',\n    formatDateTime(\n        convertTimeZone(\n            pipeline().TriggerTime,\n            'UTC',\n            'India Standard Time'\n        ),\n        'yyyyMMdd_HHmmss'\n    ),\n    '.csv'\n)",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			},
@@ -69,7 +75,7 @@
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "Get Metadata1",
+						"activity": "ADLStoADLS",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -100,14 +106,7 @@
 			{
 				"name": "Get Metadata1",
 				"type": "GetMetadata",
-				"dependsOn": [
-					{
-						"activity": "ADLStoADLS",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -118,18 +117,18 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "alds_filecheck_source",
+						"referenceName": "DS_LandingFolder",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"lastModified"
+						"childItems"
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
-						"type": "DelimitedTextReadSettings"
+						"type": "BinaryReadSettings"
 					}
 				}
 			}
