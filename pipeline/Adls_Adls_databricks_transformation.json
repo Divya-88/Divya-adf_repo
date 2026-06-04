@@ -62,7 +62,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "FileName",
-								"value": "@concat(\n'merged_',\nformatDateTime(\nconvertTimeZone(\npipeline().TriggerTime,\n'UTC',\n'India Standard Time'\n),\n'yyyyMMdd_HHmmss'\n),\n'.csv'\n)"
+								"value": {
+									"value": "@concat(\n'merged_',\nformatDateTime(\nconvertTimeZone(\npipeline().TriggerTime,\n'UTC',\n'India Standard Time'\n),\n'yyyyMMdd_HHmmss'\n),\n'.csv'\n)",
+									"type": "Expression"
+								}
 							}
 						},
 						{
@@ -159,12 +162,11 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"baseParameters": {
-									"file_name": {
-										"value": "@variables('FileName')",
-										"type": "Expression"
-									}
-								}
+								"notebookPath": "/Users/divyakrish@workforlife8891gmail.onmicrosoft.com/Adls_Databricks_transforatiion"
+							},
+							"linkedServiceName": {
+								"referenceName": "AzureDatabricks_csv_transformation",
+								"type": "LinkedServiceReference"
 							}
 						}
 					]
